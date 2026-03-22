@@ -3,61 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
+    <title>我的精美个人主页</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        /* 粒子背景图层设置 */
+        #tsparticles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        /* 打字机光标样式 */
+        .typed-cursor { opacity: 0.7; color: #2563eb; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 text-gray-900 relative">
 
-    <nav class="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center">
-        <div class="text-xl font-bold tracking-tight">YourName.</div>
-        <div class="space-x-6 text-sm font-medium text-gray-600">
-            <a href="#" class="hover:text-black transition">项目</a>
-            <a href="#" class="hover:text-black transition">博客</a>
-            <a href="#" class="hover:text-black transition">关于</a>
+    <div id="tsparticles"></div>
+
+    <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center bg-white/80 backdrop-blur-sm sticky top-0 z-50 rounded-b-xl shadow-sm border border-gray-100">
+        <div class="text-2xl font-extrabold tracking-tight text-blue-600">YH.</div>
+        <div class="space-x-8 text-sm font-medium text-gray-700">
+            <a href="#" class="hover:text-blue-600 transition">项目展示</a>
+            <a href="#" class="hover:text-blue-600 transition">研究笔记</a>
+            <a href="#" class="hover:text-blue-600 transition">关于我</a>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
-        <section class="mb-16">
-            <h1 class="text-5xl font-extrabold mb-6 leading-tight">
-                你好，我是 <span class="text-blue-600">你的名字</span> 👋
-            </h1>
-            <p class="text-xl text-gray-600 leading-relaxed max-w-2xl">
-                目前是一名物理学硕士，专注于半导体材料研究。
-                我热爱编程、AI 以及 ACGN 文化，正在努力探索科学与技术的交汇点。
-            </p>
+    <main class="max-w-6xl mx-auto px-6 py-16">
+        
+        <section class="mb-24 text-center md:text-left flex flex-col md:flex-row items-center gap-12" data-aos="fade-up">
+            <img src="https://raw.githubusercontent.com/username/username.github.io/main/avatar.jpg" alt="头像" class="w-32 h-32 rounded-full shadow-lg border-4 border-white">
+            <div>
+                <h1 class="text-6xl font-extrabold mb-6 leading-tight tracking-tighter">
+                    你好，我是 <span class="typewriter text-blue-600">你的名字</span>
+                </h1>
+                <p class="text-2xl text-gray-600 leading-relaxed max-w-3xl">
+                    目前是一名物理学硕士，专注于半导体材料研究。
+                    我热爱编程、AI、算法设计，以及 ACGN 文化，正在努力探索科学与技术的交汇点。
+                </p>
+                <div class="mt-8 space-x-4">
+                    <button class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition">了解更多</button>
+                    <button class="px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-lg shadow hover:bg-gray-300 transition">查看项目</button>
+                </div>
+            </div>
         </section>
 
         <section>
-            <h2 class="text-2xl font-bold mb-8">精选项目</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <h3 class="font-bold text-lg mb-2">个人主页项目</h3>
-                    <p class="text-gray-500 text-sm mb-4">使用 HTML 和 Tailwind CSS 构建的极简个人网站。</p>
+            <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">精选项目</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 transform hover:-translate-y-3 hover:shadow-xl transition-all duration-300 group" data-aos="fade-right">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl mb-6 flex items-center justify-center text-blue-600 text-xl font-bold">#1</div>
+                    <h3 class="font-extrabold text-xl mb-3 group-hover:text-blue-600 transition">个人主页项目</h3>
+                    <p class="text-gray-500 text-base mb-6">使用 HTML, Tailwind CSS 和各种 JS 库构建的交互式个人网站。</p>
                     <div class="flex space-x-2">
-                        <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded">HTML</span>
-                        <span class="px-2 py-1 bg-green-50 text-green-600 text-xs rounded">CSS</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">Tailwind</span>
+                        <span class="px-3 py-1 bg-green-50 text-green-600 text-xs rounded-full">Animations</span>
+                        <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs rounded-full">Particles</span>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <h3 class="font-bold text-lg mb-2">深度学习实验</h3>
-                    <p class="text-gray-500 text-sm mb-4">关于神经网络最优化方法的探索笔记。</p>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 transform hover:-translate-y-3 hover:shadow-xl transition-all duration-300 group" data-aos="fade-left">
+                    <div class="w-12 h-12 bg-red-100 rounded-xl mb-6 flex items-center justify-center text-red-600 text-xl font-bold">#2</div>
+                    <h3 class="font-extrabold text-xl mb-3 group-hover:text-red-600 transition">深度学习实验</h3>
+                    <p class="text-gray-500 text-base mb-6">关于神经网络最优化方法及其在物理仿真中应用的探索笔记。</p>
                     <div class="flex space-x-2">
-                        <span class="px-2 py-1 bg-purple-50 text-purple-600 text-xs rounded">Python</span>
-                        <span class="px-2 py-1 bg-red-50 text-red-600 text-xs rounded">AI</span>
+                        <span class="px-3 py-1 bg-red-50 text-red-600 text-xs rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-yellow-50 text-yellow-600 text-xs rounded-full">AI</span>
+                        <span class="px-3 py-1 bg-pink-50 text-pink-600 text-xs rounded-full">Physics</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 transform hover:-translate-y-3 hover:shadow-xl transition-all duration-300 group" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl mb-6 flex items-center justify-center text-green-600 text-xl font-bold">#3</div>
+                    <h3 class="font-extrabold text-xl mb-3 group-hover:text-green-600 transition">ACGN 内容分析</h3>
+                    <p class="text-gray-500 text-base mb-6">利用数据挖掘技术，分析 ACGN 文化中日式简谐主义设计趋势。</p>
+                    <div class="flex space-x-2">
+                        <span class="px-3 py-1 bg-green-50 text-green-600 text-xs rounded-full">R</span>
+                        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs rounded-full">NLP</span>
+                        <span class="px-3 py-1 bg-teal-50 text-teal-600 text-xs rounded-full">ACGN</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="max-w-4xl mx-auto px-6 py-12 border-t border-gray-100 mt-12 text-center text-gray-400 text-sm">
-        <p>© 2026 你的名字 · Powered by GitHub Pages</p>
+    <footer class="max-w-6xl mx-auto px-6 py-12 border-t border-gray-100 mt-16 text-center text-gray-400 text-sm">
+        <p>© 2026 你的名字 · 极客精神 & 物理之光</p>
     </footer>
 
+    <script src="https://unpkg.com/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // 1. 初始化 AOS 滚动动画
+        AOS.init({ duration: 1000, once: true });
+
+        // 2. 初始化 Typed.js 打字机特效
+        new Typed('.typewriter', {
+            strings: ['你的名字', '一名物理系硕士', '半导体材料研究者', 'AI/算法探索者', 'ACGN 爱好者'],
+            typeSpeed: 80, // 打字速度
+            backSpeed: 50, // 退格速度
+            loop: true,   // 循环播放
+            startDelay: 500 // 开始前延迟
+        });
+
+        // 3. 初始化 tsParticles 粒子背景 (精细的特效配置)
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#2563eb" }, // 粒子颜色 (蓝)
+                shape: { type: "circle" },
+                opacity: { value: 0.3, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true, anim: { enable: true, speed: 4, size_min: 0.3, sync: false } },
+                line_linked: { enable: true, distance: 150, color: "#93c5fd", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 </html>
